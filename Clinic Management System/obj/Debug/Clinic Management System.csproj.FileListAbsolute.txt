@@ -86,3 +86,6 @@ G:\Computers&Information\رابعة حاسبات\C#Application\Clinic Management
 G:\Computers&Information\رابعة حاسبات\C#Application\Clinic Management System\Clinic Management System\obj\Debug\RdlCompile.compiled
 G:\Computers&Information\رابعة حاسبات\C#Application\Clinic Management System\Clinic Management System\obj\Debug\Clinic_Management_System.frm_priv_user.resources
 G:\Computers&Information\رابعة حاسبات\C#Application\Clinic Management System\Clinic Management System\obj\Debug\Clinic_Management_System.frm_About_Us.resources
+E:\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.exe.config
+E:\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.exe
+E:\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.pdb
