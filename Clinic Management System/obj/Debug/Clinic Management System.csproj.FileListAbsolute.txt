@@ -89,3 +89,41 @@ G:\Computers&Information\رابعة حاسبات\C#Application\Clinic Management
 E:\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.exe.config
 E:\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.exe
 E:\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.pdb
+G:\Projects\clinic\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.exe.config
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.exe
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.pdb
+G:\Projects\clinic\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.exe
+G:\Projects\clinic\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.pdb
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.csprojResolveAssemblyReference.cache
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_About_Us.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_devices.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_diagnosis.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Add.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_priv_user.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_expenses_item.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rays.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rptExpensives.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rpt_clinicIdentification.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rpt_employee.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rpt_patient.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_rpt_supplier.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_transformers.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.item_expense.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_invatory_Add.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frmServerSetting.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.add_employee.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_add_user.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_supplier.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_update_user.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_user.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Visit_type.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_add_patient.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_employee.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_patient.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.Main_Form.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.Log_in.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Clinic_information.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.Properties.Resources.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic Management System.csproj.GenerateResource.Cache
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\RdlCompile.cache
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\RdlCompile.compiled
