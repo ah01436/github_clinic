@@ -5,6 +5,9 @@ namespace Clinic_Management_System
 {
     public partial class add_employee : Form
     {
+        cls_validate cls = new cls_validate();
+        ToolTip tt;
+        int VisibleTime = 1000;
         public add_employee()
         {
             InitializeComponent();
@@ -200,15 +203,78 @@ namespace Clinic_Management_System
 
         private void txt_nat_id_Leave(object sender, EventArgs e)
         {
-            if (cls_validate.IsValidNationalID(txt_nat_id.Text))
+            if (!cls_validate.IsValidNationalID(txt_nat_id.Text))
             {
-                MessageBox.Show("true ");
-            }
-            else
-            {
-                MessageBox.Show("false ");
+                MessageBox.Show("من فضلك ادخل الرقم القومى بشكل صحيح");
             }
 
+        }
+
+        private void txt_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                // btnSearch.Enabled = false;
+                  //in milliseconds
+                 tt = new ToolTip();
+                tt.Show("اسم الموظف " + " يجب ان يكون حروف فقط ", txt_name, 0, 0, VisibleTime);
+                e.Handled = true;
+            }
+        }
+
+        private void txt_nat_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                //   ts_btn_save.Enabled = false;
+                //in milliseconds
+                tt = new ToolTip();
+                tt.Show("الرقم القومى " + " يجب ان يكون ارقام ", txt_nat_id, 0, 0, VisibleTime);
+                //   MessageBox.Show("كود المريض يجب ان يكون ارقام فقط , رجاء لا تكتب حروف ");
+                e.Handled = true;
+            }
+        }
+
+        private void txt_phone1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                //   ts_btn_save.Enabled = false;
+                //in milliseconds
+                 tt = new ToolTip();
+                tt.Show("رقم الهاتف " + " يجب ان يكون ارقام ", txt_phone1, 0, 0, VisibleTime);
+                //   MessageBox.Show("كود المريض يجب ان يكون ارقام فقط , رجاء لا تكتب حروف ");
+                e.Handled = true;
+            }   
+        }
+       
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+            if (txt_email.Text != "")
+            {
+                if (!cls.IsValidEmail(txt_email.Text))
+                {
+                    tt = new ToolTip();
+                    tt.Show("عفوا البريد الالكترونى الذى ادخلته غير صحيح", txt_email, 0, 0, VisibleTime);
+
+                    txt_email.Focus();
+
+                }
+            }
+        }
+
+        private void txt_phone1_Leave(object sender, EventArgs e)
+        {
+            if (txt_phone1.Text != "")
+            {
+                if (!cls.IsvalidPhone(txt_phone1.Text))
+                {
+                    tt = new ToolTip();
+                    tt.Show("عفوا رقم الهاتف الذى ادخلته غير صحيح", txt_phone1, 0, 0, VisibleTime);
+
+                    txt_phone1.Focus();
+                }
+            }
         }
 
        

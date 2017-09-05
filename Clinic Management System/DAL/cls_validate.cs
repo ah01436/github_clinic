@@ -14,6 +14,19 @@ namespace Clinic_Management_System
             new_id += (Convert.ToInt64(id.Substring(length, id.Length - length)) + 1).ToString();
             return new_id;
         }
+        public bool IsvalidPhone(string phone)
+        {
+            Regex phoneNumpattern = new Regex(@"^01[0-2][0-9]{8}$");
+            if (phoneNumpattern.IsMatch(phone))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         // check if the email is valide or no  
         public  bool IsValidEmail(string email)
         {
@@ -77,19 +90,7 @@ namespace Clinic_Management_System
             return true;
 
         }
-        public static bool IsvalidPhone(string phone)
-        {
-        Regex phoneNumpattern = new Regex(@"^01[0-2][0-9]{8}$");
-            if (phoneNumpattern.IsMatch(phone))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        
-        }
+     
         public static bool letterValidation(string txt)
         {
             if (txt.All(c=>Char.IsLetter(c) || c==' '))

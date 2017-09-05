@@ -44,14 +44,13 @@ namespace Clinic_Management_System
                 dgv_patient.Columns[0].HeaderText = "الكود";
                 dgv_patient.Columns[1].HeaderText = "الاسم";
                 dgv_patient.Columns[2].HeaderText = "النوع";
+                dgv_patient.Columns[6].HeaderText = "العنوان";
                 dgv_patient.Columns[8].HeaderText = "الهاتف";
-                dgv_patient.Columns[9].HeaderText = "الهاتف2";
                 dgv_patient.Columns[3].Visible = false;
                 dgv_patient.Columns[4].Visible = false;
                 dgv_patient.Columns[5].Visible = false;
-                dgv_patient.Columns[6].Visible = false;
                 dgv_patient.Columns[7].Visible = false;
-                dgv_patient.Columns[10].Visible = false;
+                dgv_patient.Columns[9].Visible = false;
             }
             catch(Exception ex)
             {
@@ -132,12 +131,18 @@ namespace Clinic_Management_System
                 frm.rdb_motalk.Checked = true;
             }
             frm.dtp_birth_date.Value = Convert.ToDateTime(dgv_patient.CurrentRow.Cells[3].Value.ToString());
-            MessageBox.Show(dgv_patient.CurrentRow.Cells[4].Value.ToString());
             frm.dtb_reg_date.Value = Convert.ToDateTime(dgv_patient.CurrentRow.Cells[4].Value.ToString());
             frm.txt_address.Text = dgv_patient.CurrentRow.Cells[6].Value.ToString();
-            frm.txt_phone1.Text = dgv_patient.CurrentRow.Cells[7].Value.ToString();
-            frm.txt_phone2.Text = dgv_patient.CurrentRow.Cells[8].Value.ToString();
-            frm.txt_email.Text = dgv_patient.CurrentRow.Cells[9].Value.ToString();
+            frm.txt_phone1.Text = dgv_patient.CurrentRow.Cells[8].Value.ToString();
+            frm.txt_email.Text = dgv_patient.CurrentRow.Cells[7].Value.ToString();
+            dt = new DataTable();
+            dt = con.selectt("select * from transformers ;");
+            frm.cmb_transformers.DataSource = dt;
+            frm.cmb_transformers.ValueMember = "id";
+            frm.cmb_transformers.DisplayMember = "name";
+            frm.cmb_transformers.SelectedValue = dgv_patient.CurrentRow.Cells[9].Value.ToString();
+
+
             frm.ShowDialog();
             this.frm_patient_Load(sender, e);
         }

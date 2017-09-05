@@ -57,7 +57,7 @@
             this.txtServerName.Name = "txtServerName";
             this.txtServerName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtServerName.Size = new System.Drawing.Size(305, 30);
-            this.txtServerName.TabIndex = 0;
+            this.txtServerName.TabIndex = 1;
             this.txtServerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
@@ -92,7 +92,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPass.Size = new System.Drawing.Size(306, 30);
-            this.txtPass.TabIndex = 1;
+            this.txtPass.TabIndex = 4;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -124,7 +124,7 @@
             this.txt_database.Name = "txt_database";
             this.txt_database.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_database.Size = new System.Drawing.Size(306, 30);
-            this.txt_database.TabIndex = 15;
+            this.txt_database.TabIndex = 5;
             this.txt_database.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txt_port
@@ -137,7 +137,7 @@
             this.txt_port.Name = "txt_port";
             this.txt_port.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_port.Size = new System.Drawing.Size(306, 30);
-            this.txt_port.TabIndex = 13;
+            this.txt_port.TabIndex = 2;
             this.txt_port.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -161,7 +161,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtUser.Size = new System.Drawing.Size(306, 30);
-            this.txtUser.TabIndex = 0;
+            this.txtUser.TabIndex = 3;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1

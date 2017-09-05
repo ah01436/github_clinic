@@ -56,10 +56,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.tab_contact_info = new System.Windows.Forms.TabPage();
-            this.p_phone2 = new System.Windows.Forms.Panel();
-            this.txt_phone2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cb_add_phon2 = new System.Windows.Forms.CheckBox();
+            this.add_item = new System.Windows.Forms.Button();
+            this.cmb_transformers = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txt_phone1 = new System.Windows.Forms.TextBox();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,16 +66,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.cmb_transformers = new System.Windows.Forms.ComboBox();
-            this.add_item = new System.Windows.Forms.Button();
             this.toolStrip_controrl.SuspendLayout();
             this.tabControl_patient_info.SuspendLayout();
             this.tab_basic_info.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tab_contact_info.SuspendLayout();
-            this.p_phone2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip_controrl
@@ -285,18 +280,18 @@
             // dtb_reg_date
             // 
             this.dtb_reg_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtb_reg_date.Location = new System.Drawing.Point(388, 301);
+            this.dtb_reg_date.Location = new System.Drawing.Point(341, 301);
             this.dtb_reg_date.Name = "dtb_reg_date";
-            this.dtb_reg_date.Size = new System.Drawing.Size(137, 30);
+            this.dtb_reg_date.Size = new System.Drawing.Size(184, 30);
             this.dtb_reg_date.TabIndex = 9;
             // 
             // dtp_birth_date
             // 
             this.dtp_birth_date.CustomFormat = "";
             this.dtp_birth_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_birth_date.Location = new System.Drawing.Point(388, 190);
+            this.dtp_birth_date.Location = new System.Drawing.Point(341, 190);
             this.dtp_birth_date.Name = "dtp_birth_date";
-            this.dtp_birth_date.Size = new System.Drawing.Size(137, 30);
+            this.dtp_birth_date.Size = new System.Drawing.Size(184, 30);
             this.dtp_birth_date.TabIndex = 4;
             this.dtp_birth_date.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
@@ -353,6 +348,7 @@
             this.txt_name.TabIndex = 1;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt_name, "ادخل اسم المريض ");
+            this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // label1
             // 
@@ -378,8 +374,6 @@
             this.tab_contact_info.Controls.Add(this.add_item);
             this.tab_contact_info.Controls.Add(this.cmb_transformers);
             this.tab_contact_info.Controls.Add(this.label11);
-            this.tab_contact_info.Controls.Add(this.p_phone2);
-            this.tab_contact_info.Controls.Add(this.cb_add_phon2);
             this.tab_contact_info.Controls.Add(this.txt_phone1);
             this.tab_contact_info.Controls.Add(this.txt_address);
             this.tab_contact_info.Controls.Add(this.label10);
@@ -392,67 +386,51 @@
             this.tab_contact_info.TabIndex = 1;
             this.tab_contact_info.Text = "معلومات الاتصال";
             // 
-            // p_phone2
+            // add_item
             // 
-            this.p_phone2.Controls.Add(this.txt_phone2);
-            this.p_phone2.Controls.Add(this.label7);
-            this.p_phone2.Location = new System.Drawing.Point(200, 180);
-            this.p_phone2.Name = "p_phone2";
-            this.p_phone2.Size = new System.Drawing.Size(492, 43);
-            this.p_phone2.TabIndex = 16;
-            this.p_phone2.Visible = false;
+            this.add_item.Image = global::Clinic_Management_System.Properties.Resources.if_plus_1646001;
+            this.add_item.Location = new System.Drawing.Point(182, 213);
+            this.add_item.Name = "add_item";
+            this.add_item.Size = new System.Drawing.Size(53, 38);
+            this.add_item.TabIndex = 26;
+            this.add_item.UseVisualStyleBackColor = true;
+            this.add_item.Click += new System.EventHandler(this.add_item_Click);
             // 
-            // txt_phone2
+            // cmb_transformers
             // 
-            this.txt_phone2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_phone2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.txt_phone2.Location = new System.Drawing.Point(79, 3);
-            this.txt_phone2.MaxLength = 14;
-            this.txt_phone2.Name = "txt_phone2";
-            this.txt_phone2.Size = new System.Drawing.Size(278, 30);
-            this.txt_phone2.TabIndex = 13;
-            this.txt_phone2.Text = " ";
-            this.txt_phone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.txt_phone2, "رقم هاتف اخر ");
-            this.txt_phone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone1_KeyPress);
+            this.cmb_transformers.FormattingEnabled = true;
+            this.cmb_transformers.Location = new System.Drawing.Point(241, 218);
+            this.cmb_transformers.Name = "cmb_transformers";
+            this.cmb_transformers.Size = new System.Drawing.Size(245, 31);
+            this.cmb_transformers.TabIndex = 18;
+            this.cmb_transformers.SelectedIndexChanged += new System.EventHandler(this.cmb_transformers_SelectedIndexChanged);
             // 
-            // label7
+            // label11
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(375, 6);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 23);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "رقم الهاتف 2 ";
-            // 
-            // cb_add_phon2
-            // 
-            this.cb_add_phon2.AutoSize = true;
-            this.cb_add_phon2.Location = new System.Drawing.Point(405, 151);
-            this.cb_add_phon2.Name = "cb_add_phon2";
-            this.cb_add_phon2.Size = new System.Drawing.Size(152, 27);
-            this.cb_add_phon2.TabIndex = 15;
-            this.cb_add_phon2.Text = "إضافة هاتف أخر";
-            this.cb_add_phon2.UseVisualStyleBackColor = true;
-            this.cb_add_phon2.CheckedChanged += new System.EventHandler(this.cb_add_phon2_CheckedChanged);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(495, 221);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(206, 23);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "تحويل من الاستاذ الدكتور";
             // 
             // txt_phone1
             // 
-            this.txt_phone1.Location = new System.Drawing.Point(275, 103);
-            this.txt_phone1.MaxLength = 14;
+            this.txt_phone1.Location = new System.Drawing.Point(199, 100);
+            this.txt_phone1.MaxLength = 11;
             this.txt_phone1.Name = "txt_phone1";
-            this.txt_phone1.Size = new System.Drawing.Size(282, 30);
+            this.txt_phone1.Size = new System.Drawing.Size(358, 30);
             this.txt_phone1.TabIndex = 12;
             this.txt_phone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt_phone1, "رقم الهاتف الاساسى ");
             this.txt_phone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone1_KeyPress);
+            this.txt_phone1.Leave += new System.EventHandler(this.txt_phone1_Leave);
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(86, 43);
+            this.txt_address.Location = new System.Drawing.Point(199, 43);
             this.txt_address.Name = "txt_address";
-            this.txt_address.Size = new System.Drawing.Size(471, 30);
+            this.txt_address.Size = new System.Drawing.Size(358, 30);
             this.txt_address.TabIndex = 11;
             this.txt_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt_address, "عنوان المريض ");
@@ -460,7 +438,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(630, 47);
+            this.label10.Location = new System.Drawing.Point(639, 47);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 23);
             this.label10.TabIndex = 10;
@@ -468,17 +446,18 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(86, 228);
+            this.txt_email.Location = new System.Drawing.Point(199, 160);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(471, 30);
+            this.txt_email.Size = new System.Drawing.Size(358, 30);
             this.txt_email.TabIndex = 14;
             this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.txt_email, "الايميل");
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(621, 231);
+            this.label6.Location = new System.Drawing.Point(630, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 23);
             this.label6.TabIndex = 5;
@@ -487,7 +466,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(600, 107);
+            this.label5.Location = new System.Drawing.Point(609, 107);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 23);
             this.label5.TabIndex = 4;
@@ -500,34 +479,6 @@
             this.toolTip1.InitialDelay = 50;
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ReshowDelay = 10;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(492, 297);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(206, 23);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "تحويل من الاستاذ الدكتور";
-            // 
-            // cmb_transformers
-            // 
-            this.cmb_transformers.FormattingEnabled = true;
-            this.cmb_transformers.Location = new System.Drawing.Point(241, 297);
-            this.cmb_transformers.Name = "cmb_transformers";
-            this.cmb_transformers.Size = new System.Drawing.Size(245, 31);
-            this.cmb_transformers.TabIndex = 18;
-            this.cmb_transformers.SelectedIndexChanged += new System.EventHandler(this.cmb_transformers_SelectedIndexChanged);
-            // 
-            // add_item
-            // 
-            this.add_item.Image = global::Clinic_Management_System.Properties.Resources.if_plus_1646001;
-            this.add_item.Location = new System.Drawing.Point(182, 290);
-            this.add_item.Name = "add_item";
-            this.add_item.Size = new System.Drawing.Size(53, 38);
-            this.add_item.TabIndex = 26;
-            this.add_item.UseVisualStyleBackColor = true;
-            this.add_item.Click += new System.EventHandler(this.add_item_Click);
             // 
             // frm_add_patient
             // 
@@ -556,8 +507,6 @@
             this.panel1.PerformLayout();
             this.tab_contact_info.ResumeLayout(false);
             this.tab_contact_info.PerformLayout();
-            this.p_phone2.ResumeLayout(false);
-            this.p_phone2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -580,7 +529,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
@@ -599,12 +547,9 @@
         public System.Windows.Forms.RadioButton rdb_motalk;
         public System.Windows.Forms.RadioButton rdb_mairried;
         public System.Windows.Forms.RadioButton rdb_single;
-        public System.Windows.Forms.TextBox txt_phone2;
         public System.Windows.Forms.TextBox txt_phone1;
-        private System.Windows.Forms.Panel p_phone2;
-        private System.Windows.Forms.CheckBox cb_add_phon2;
-        private System.Windows.Forms.ComboBox cmb_transformers;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button add_item;
+        public System.Windows.Forms.ComboBox cmb_transformers;
     }
 }

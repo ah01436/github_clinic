@@ -9,6 +9,9 @@ namespace Clinic_Management_System
 {
     public partial class frm_add_patient : Form
     {
+        cls_validate cls = new cls_validate();
+        ToolTip tt;
+        int VisibleTime = 1000;
         Connection con = new Connection();
         DataTable dt;
         string transformer="";
@@ -20,7 +23,6 @@ namespace Clinic_Management_System
         private string reg_date;
         private string address;
         private string phone1;
-        private string phone2;
         private string email;
         public frm_add_patient()
         {
@@ -46,9 +48,9 @@ namespace Clinic_Management_System
                     dtp_birth_date.Focus();
                     return false;
                 }
-                if (txt_phone1.Text == "" && txt_phone2.Text == "")
+                if (txt_phone1.Text == "")
                 {
-                    MessageBox.Show("يجب ادخال رقم هاتف واحد على الاقل ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("يجب ادخال رقم الهاتف  ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.tabControl_patient_info.SelectedTab = this.tabControl_patient_info.TabPages["tab_contact_info"];
                     txt_phone1.Focus();
                     return false;
@@ -72,21 +74,22 @@ namespace Clinic_Management_System
                     reg_date = dtb_reg_date.Value.ToString("yyyy-MM-dd");                 
                     address = txt_address.Text;
                     phone1 = txt_phone1.Text;
-                    phone2 = txt_phone2.Text;
                     email = txt_email.Text;
                     Patient p = new Patient();
                     if (this.Name == "add_patient")
                     {
-                        if (p.insertdata(id, name, gender, birth_date, status, reg_date, address, phone1, phone2, email,transformer))
+                        if (con.ExecuteQueries(@"insert into patient values('"+id+"','"+name+"','"+gender+"','"+birth_date
+                            +"','"+reg_date+"','"+status+"','"+address+"','"+email+"','"+phone1+"',"+transformer+")"))
                         {
-                            con.ExecuteQueries("update patient set transformers_id="+transformer+" where patient_id='"+id+"';");
                             MessageBox.Show("تمت الاضافة بنجاح ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                     }
                     else if (this.Name == "update_patient")
                     {
-                        if (p.update_patient(id, name, gender, birth_date, status, reg_date, address, phone1, phone2, email))
+                        if (con.ExecuteQueries("update patient set patient_name='"+name+"',patient_gender='"+gender+"',patient_birth_date='"
+                            +birth_date+"',patient_register_date='"+reg_date+"',patient_status='"+status+"',patient_address='"+address
+                            +"',patient_email='"+email+"',patient_contact_no='"+phone1+"',transformers_id="+transformer+" where patient_id='"+id+"'"))
                         {
                             MessageBox.Show("تمت التعديل بنجاح ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
@@ -109,7 +112,6 @@ namespace Clinic_Management_System
             txt_email.Clear();
             txt_name.Clear();
             txt_phone1.Clear();
-            txt_phone2.Clear();
             dtb_reg_date.ResetText();
             dtp_birth_date.ResetText();
             rdb_mairried.Checked = true;
@@ -186,29 +188,25 @@ namespace Clinic_Management_System
                 e.Handled = true;
             }
         }
-        private void cb_add_phon2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_add_phon2.Checked)
-            {
-                p_phone2.Visible = true;
-            }
-            else
-            {
-                p_phone2.Visible = false;
-            }
-        }
        
         private void frm_add_patient_Load(object sender, EventArgs e)
         {
-            dt = new DataTable();
-            dt = con.selectt("select * from transformers;");
-            cmb_transformers.DataSource = dt;
-            cmb_transformers.ValueMember = "id";
-            cmb_transformers.DisplayMember = "name";
-            
-            
 
-        }
+            if (this.Name == "add_patient")
+            {
+                dt = new DataTable();
+                dt = con.selectt("select * from transformers;");
+                cmb_transformers.DataSource = dt;
+                cmb_transformers.ValueMember = "id";
+                cmb_transformers.DisplayMember = "name";
+                transformer = cmb_transformers.SelectedValue.ToString();
+            }
+            else
+            {
+                transformer = cmb_transformers.SelectedValue.ToString();
+                MessageBox.Show(transformer);
+            }
+        } 
 
         private void add_item_Click(object sender, EventArgs e)
         {
@@ -222,7 +220,51 @@ namespace Clinic_Management_System
 
         private void cmb_transformers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            transformer = cmb_transformers.SelectedValue.ToString();  
+            transformer = cmb_transformers.SelectedValue.ToString();
+            //MessageBox.Show(transformer);
+        }
+
+        private void txt_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                // btnSearch.Enabled = false;
+
+                tt = new ToolTip();
+                tt.Show("اسم المريض " + " يجب ان يكون حروف فقط ", txt_name, 0, 0, VisibleTime);
+                //   MessageBox.Show("كود المريض يجب ان يكون ارقام فقط , رجاء لا تكتب حروف ");
+                e.Handled = true;
+                txt_name.Focus();
+            }
+        }
+
+        private void txt_phone1_Leave(object sender, EventArgs e)
+        {
+            if (txt_phone1.Text != "")
+            {
+                if (!cls.IsvalidPhone(txt_phone1.Text))
+                {
+                    tt = new ToolTip();
+                    tt.Show("عفوا رقم الهاتف الذى ادخلته غير صحيح", txt_phone1, 0, 0, VisibleTime);
+
+                    txt_phone1.Focus();
+                }
+            }
+        }
+
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+            if (txt_email.Text != "")
+            {
+                if (!cls.IsValidEmail(txt_email.Text))
+                {
+                    tt = new ToolTip();
+                    tt.Show("عفوا البريد الالكترونى الذى ادخلته غير صحيح", txt_email, 0, 0, VisibleTime);
+
+                    txt_email.Focus();
+
+                }
+            }
         }
     }
 }

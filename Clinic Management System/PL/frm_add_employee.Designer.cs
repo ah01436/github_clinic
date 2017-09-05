@@ -401,6 +401,7 @@
             this.txt_name.Size = new System.Drawing.Size(498, 30);
             this.txt_name.TabIndex = 1;
             this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // label1
             // 
@@ -447,6 +448,7 @@
             this.txt_nat_id.Size = new System.Drawing.Size(471, 30);
             this.txt_nat_id.TabIndex = 20;
             this.txt_nat_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_nat_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nat_id_KeyPress);
             this.txt_nat_id.Leave += new System.EventHandler(this.txt_nat_id_Leave);
             // 
             // label12
@@ -505,11 +507,13 @@
             // txt_phone1
             // 
             this.txt_phone1.Location = new System.Drawing.Point(275, 188);
-            this.txt_phone1.MaxLength = 14;
+            this.txt_phone1.MaxLength = 11;
             this.txt_phone1.Name = "txt_phone1";
             this.txt_phone1.Size = new System.Drawing.Size(282, 30);
             this.txt_phone1.TabIndex = 12;
             this.txt_phone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_phone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone1_KeyPress_1);
+            this.txt_phone1.Leave += new System.EventHandler(this.txt_phone1_Leave);
             // 
             // txt_address
             // 
@@ -535,6 +539,7 @@
             this.txt_email.Size = new System.Drawing.Size(471, 30);
             this.txt_email.TabIndex = 14;
             this.txt_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // label6
             // 
@@ -567,6 +572,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "add_employee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إضافة موظف جديد ";
             this.toolStrip_controrl.ResumeLayout(false);
             this.toolStrip_controrl.PerformLayout();
