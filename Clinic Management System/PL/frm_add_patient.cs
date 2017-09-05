@@ -204,7 +204,6 @@ namespace Clinic_Management_System
             else
             {
                 transformer = cmb_transformers.SelectedValue.ToString();
-                MessageBox.Show(transformer);
             }
         } 
 
