@@ -161,6 +161,7 @@
             this.dgv_patient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_patient.Size = new System.Drawing.Size(904, 262);
             this.dgv_patient.TabIndex = 22;
+            this.dgv_patient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patient_CellDoubleClick);
             // 
             // toolTip1
             // 
@@ -278,7 +279,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip_controrl;
         public System.Windows.Forms.ToolStripDropDownButton btn_add;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         public System.Windows.Forms.ToolStripDropDownButton btn_edit;
@@ -294,6 +294,7 @@
         private System.Windows.Forms.RadioButton rdb_phone;
         private System.Windows.Forms.RadioButton rdb_name;
         private System.Windows.Forms.RadioButton rdb_id;
+        public System.Windows.Forms.ToolStrip toolStrip_controrl;
 
 
 

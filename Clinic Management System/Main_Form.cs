@@ -360,6 +360,12 @@ namespace Clinic_Management_System
             frm.ShowDialog();
         }
 
+        private void فتحزيارةلمريضToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_Open_Visit frm = new frm_Open_Visit();
+            frm.Show();
+        }
+
        
 
         

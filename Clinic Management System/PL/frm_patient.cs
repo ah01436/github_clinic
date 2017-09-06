@@ -7,16 +7,19 @@ namespace Clinic_Management_System
 {
     public partial class frm_patient : Form
     {
+        
         public frm_patient()
         {
             InitializeComponent();
             loadPriv();
         }
-
+     
         Patient pat;
         string pat_id;
         DataTable dt;
         DataView dv;
+        public static string pat_cod;
+        public static string pat_name;
         // increase the genrate the id of new patient
         public string increasekey(string id)
         {
@@ -233,6 +236,16 @@ namespace Clinic_Management_System
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
+        }
+
+        private void dgv_patient_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.Name == "بحث عن مريض")
+            {
+                pat_cod = dgv_patient.CurrentRow.Cells[0].Value.ToString();
+                pat_name = dgv_patient.CurrentRow.Cells[1].Value.ToString();
+                this.Close();
+            }
         }
     }
 }

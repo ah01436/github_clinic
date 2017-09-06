@@ -66,6 +66,7 @@
             this.التعريفبالعيادةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الموردينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الصلاحياتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.مننحنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lb_curent_user = new System.Windows.Forms.ToolStripStatusLabel();
@@ -75,7 +76,7 @@
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.مننحنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحزيارةلمريضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -244,7 +245,8 @@
             // msCheckupManage
             // 
             this.msCheckupManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.add_type_of_visit});
+            this.add_type_of_visit,
+            this.فتحزيارةلمريضToolStripMenuItem});
             this.msCheckupManage.Name = "msCheckupManage";
             this.msCheckupManage.Size = new System.Drawing.Size(152, 24);
             this.msCheckupManage.Text = "إدارة الزيارات";
@@ -253,7 +255,7 @@
             // add_type_of_visit
             // 
             this.add_type_of_visit.Name = "add_type_of_visit";
-            this.add_type_of_visit.Size = new System.Drawing.Size(169, 24);
+            this.add_type_of_visit.Size = new System.Drawing.Size(170, 24);
             this.add_type_of_visit.Text = "إضافة نوع زيارة ";
             this.add_type_of_visit.Click += new System.EventHandler(this.add_type_of_visit_Click);
             // 
@@ -374,6 +376,13 @@
             this.الصلاحياتToolStripMenuItem.Text = "الصلاحيات";
             this.الصلاحياتToolStripMenuItem.Click += new System.EventHandler(this.الصلاحياتToolStripMenuItem_Click);
             // 
+            // مننحنToolStripMenuItem
+            // 
+            this.مننحنToolStripMenuItem.Name = "مننحنToolStripMenuItem";
+            this.مننحنToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.مننحنToolStripMenuItem.Text = "من نحن";
+            this.مننحنToolStripMenuItem.Click += new System.EventHandler(this.مننحنToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
@@ -447,12 +456,12 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
-            // مننحنToolStripMenuItem
+            // فتحزيارةلمريضToolStripMenuItem
             // 
-            this.مننحنToolStripMenuItem.Name = "مننحنToolStripMenuItem";
-            this.مننحنToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.مننحنToolStripMenuItem.Text = "من نحن";
-            this.مننحنToolStripMenuItem.Click += new System.EventHandler(this.مننحنToolStripMenuItem_Click);
+            this.فتحزيارةلمريضToolStripMenuItem.Name = "فتحزيارةلمريضToolStripMenuItem";
+            this.فتحزيارةلمريضToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
+            this.فتحزيارةلمريضToolStripMenuItem.Text = "فتح زيارة لمريض";
+            this.فتحزيارةلمريضToolStripMenuItem.Click += new System.EventHandler(this.فتحزيارةلمريضToolStripMenuItem_Click);
             // 
             // Main_Form
             // 
@@ -531,6 +540,7 @@
         private System.Windows.Forms.ToolStripMenuItem الموردينToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem الصلاحياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem مننحنToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem فتحزيارةلمريضToolStripMenuItem;
         //private System.Windows.Forms.Button btnPatinet;
 
     }

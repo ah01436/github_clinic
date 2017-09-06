@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `clinic` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `clinic`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win32 (AMD64)
 --
 -- Host: localhost    Database: clinic
@@ -167,7 +169,7 @@ CREATE TABLE `inventory` (
   `item_buy_price` float default NULL,
   `item_function` varchar(200) default NULL,
   PRIMARY KEY  (`item_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,7 +400,7 @@ CREATE TABLE `tb_priv` (
 
 LOCK TABLES `tb_priv` WRITE;
 /*!40000 ALTER TABLE `tb_priv` DISABLE KEYS */;
-INSERT  IGNORE INTO `tb_priv` (`priv_user_id`, `priv_screen_id`, `priv_display`, `priv_add`, `priv_delete`, `priv_edit`) VALUES ('user_101',1,1,1,1,1),('user_101',2,1,1,1,1),('user_101',3,1,0,0,0),('user_101',4,1,1,1,1),('user_101',5,1,0,0,0),('user_101',6,1,0,0,0),('user_101',7,1,0,0,0),('user_101',8,1,0,0,0),('user_101',9,1,0,0,0),('user_101',10,1,0,0,0),('user_101',11,1,0,0,0),('user_101',12,1,1,0,0),('user_101',13,1,1,0,0),('user_101',14,0,1,0,0),('user_101',15,0,0,0,0),('user_101',16,0,0,0,0),('user_101',17,0,0,0,0),('user_103',1,0,0,0,0),('user_103',2,0,0,0,0),('user_103',3,1,0,0,0),('user_103',4,1,0,0,0),('user_103',5,1,0,0,0),('user_103',6,1,0,0,0),('user_103',7,1,0,0,0),('user_103',8,0,0,0,0),('user_103',9,0,0,0,0),('user_103',10,0,0,0,0),('user_103',11,1,0,0,0),('user_103',12,1,0,0,0),('user_103',13,1,0,0,0),('user_103',14,1,0,0,0),('user_103',15,1,0,0,0),('user_103',16,1,0,0,0),('user_103',17,1,0,0,0);
+INSERT  IGNORE INTO `tb_priv` (`priv_user_id`, `priv_screen_id`, `priv_display`, `priv_add`, `priv_delete`, `priv_edit`) VALUES ('user_101',1,1,1,1,1),('user_101',2,1,1,1,1),('user_101',3,1,0,0,0),('user_101',4,1,1,1,1),('user_101',5,1,1,1,1),('user_101',6,1,0,0,0),('user_101',7,1,0,0,0),('user_101',8,1,0,0,0),('user_101',9,1,0,0,0),('user_101',10,1,0,0,0),('user_101',11,1,0,0,0),('user_101',12,1,1,0,0),('user_101',13,1,1,0,0),('user_101',14,0,1,0,0),('user_101',15,0,0,0,0),('user_101',16,0,0,0,0),('user_101',17,0,0,0,0),('user_103',1,0,0,0,0),('user_103',2,0,0,0,0),('user_103',3,1,0,0,0),('user_103',4,1,0,0,0),('user_103',5,1,0,0,0),('user_103',6,1,0,0,0),('user_103',7,1,0,0,0),('user_103',8,0,0,0,0),('user_103',9,0,0,0,0),('user_103',10,0,0,0,0),('user_103',11,1,0,0,0),('user_103',12,1,0,0,0),('user_103',13,1,0,0,0),('user_103',14,1,0,0,0),('user_103',15,1,0,0,0),('user_103',16,1,0,0,0),('user_103',17,1,0,0,0);
 /*!40000 ALTER TABLE `tb_priv` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -439,7 +441,7 @@ CREATE TABLE `transformers` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -494,7 +496,7 @@ CREATE TABLE `visit_type` (
   `v_price` float default NULL,
   `v_nurse_offer` float default NULL,
   PRIMARY KEY  (`v_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -503,7 +505,42 @@ CREATE TABLE `visit_type` (
 
 LOCK TABLES `visit_type` WRITE;
 /*!40000 ALTER TABLE `visit_type` DISABLE KEYS */;
+INSERT  IGNORE INTO `visit_type` (`v_id`, `v_name`, `v_price`, `v_nurse_offer`) VALUES (1,'كشف',50,2.5),(2,'زيارة',20,3.5);
 /*!40000 ALTER TABLE `visit_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `visits`
+--
+
+DROP TABLE IF EXISTS `visits`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `visits` (
+  `id` int(11) NOT NULL auto_increment,
+  `pat_id` varchar(45) default NULL,
+  `doc_id` varchar(45) default NULL,
+  `user_id` varchar(45) default NULL,
+  `date_visit` date default NULL,
+  `visite_type_code` int(11) default NULL,
+  `isopen` tinyint(1) default NULL,
+  `detection_done` tinyint(1) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `doc_id` (`doc_id`),
+  KEY `user_id` (`user_id`),
+  KEY `pat_id` (`pat_id`),
+  KEY `visite_type_code` (`visite_type_code`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visits`
+--
+
+LOCK TABLES `visits` WRITE;
+/*!40000 ALTER TABLE `visits` DISABLE KEYS */;
+INSERT  IGNORE INTO `visits` (`id`, `pat_id`, `doc_id`, `user_id`, `date_visit`, `visite_type_code`, `isopen`, `detection_done`) VALUES (4,'P_106','E_102','user_101','2017-09-06',2,0,0),(6,'P_107','E_102','user_101','2017-09-06',2,0,0);
+/*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -695,4 +732,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-05 12:57:53
+-- Dump completed on 2017-09-06 19:29:35

@@ -99,6 +99,12 @@
     <Compile Include="frm_expenses.Designer.cs">
       <DependentUpon>frm_expenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Open_Visit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Open_Visit.Designer.cs">
+      <DependentUpon>frm_Open_Visit.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_priv_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_expenses.resx">
       <DependentUpon>frm_expenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Open_Visit.resx">
+      <DependentUpon>frm_Open_Visit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_priv_user.resx">
       <DependentUpon>frm_priv_user.cs</DependentUpon>
@@ -452,6 +461,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

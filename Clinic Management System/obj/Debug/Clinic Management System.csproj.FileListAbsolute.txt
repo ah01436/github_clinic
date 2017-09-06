@@ -162,3 +162,4 @@ E:\github_clinic\Clinic Management System\obj\Debug\RdlCompile.cache
 E:\github_clinic\Clinic Management System\obj\Debug\RdlCompile.compiled
 E:\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.exe
 E:\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.pdb
+E:\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Open_Visit.resources

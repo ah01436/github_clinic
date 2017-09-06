@@ -18,7 +18,7 @@ namespace Clinic_Management_System
             Application.SetCompatibleTextRenderingDefault(false);
             frmServerSetting frm = new frmServerSetting();
             //add_employee f = new add_employee();
-            //Application.Run(f);
+           // Application.Run(new frm_Open_Visit());
           // Application.Run(new frm_About_Us());
             //MessageBox.Show(Properties.Settings.Default.Server);
             if (Properties.Settings.Default.Server == "")
