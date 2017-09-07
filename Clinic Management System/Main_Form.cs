@@ -366,6 +366,18 @@ namespace Clinic_Management_System
             frm.Show();
         }
 
+        private void ادخالبياناتزيارةToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_exposure frm = new frm_exposure();
+            frm.Show();
+        }
+
+        private void ادارةالتشخيصاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_personification frm = new frm_personification();
+            frm.Show();
+        }
+
        
 
         

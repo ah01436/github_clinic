@@ -96,6 +96,13 @@ namespace Clinic_Management_System
 
         private void btn_add_Click(object sender, EventArgs e)
         {
+            dt = new DataTable();
+            dt = con.selectt("SELECT * from visits where pat_id='"+pat_code+"' and date_visit='"+v_date+"';");
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("عفوا لا يمكن حجز اكثر من زيارة لمريض ف نفس اليوم");
+            }
+            else { 
             if (con.ExecuteQueries("insert into visits(`pat_id`,`doc_id`,`user_id`,`date_visit`,`visite_type_code`,isopen,detection_done) values('" + pat_code + "','" + cmb_doc.SelectedValue.ToString() + "','" + Main_Form.curnt_user + "','" + v_date + "'," + cmb_visit_type.SelectedValue.ToString() + ",false,false)"))
             {
                 MessageBox.Show("تمت الاضافة بنجاح ", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -112,7 +119,7 @@ namespace Clinic_Management_System
                 dgv_visits.Columns[5].HeaderText = "موظف الدخول";
             }
         }
-
+        }
         private void toolStrip_controrl_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 

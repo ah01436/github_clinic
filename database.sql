@@ -155,6 +155,35 @@ INSERT  IGNORE INTO `expenses` (`id`, `item_id`, `expense_date`, `price`, `notes
 UNLOCK TABLES;
 
 --
+-- Table structure for table `exposure`
+--
+
+DROP TABLE IF EXISTS `exposure`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `exposure` (
+  `id` int(11) NOT NULL auto_increment,
+  `v_id` int(11) default NULL,
+  `personification` varchar(255) default NULL,
+  `rays` varchar(255) default NULL,
+  `diagnosis` varchar(255) default NULL,
+  `drug` varchar(255) default NULL,
+  PRIMARY KEY  (`id`),
+  KEY `v_id` (`v_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `exposure`
+--
+
+LOCK TABLES `exposure` WRITE;
+/*!40000 ALTER TABLE `exposure` DISABLE KEYS */;
+INSERT  IGNORE INTO `exposure` (`id`, `v_id`, `personification`, `rays`, `diagnosis`, `drug`) VALUES (1,1,'تشخيص1','اشعة ','تحليل 1','sdA,JBGJHB'),(2,2,'تسخيص 2','asdasda','تحليل 1','sdA,ali');
+/*!40000 ALTER TABLE `exposure` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `inventory`
 --
 
@@ -264,6 +293,30 @@ LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
 INSERT  IGNORE INTO `patient` (`patient_id`, `patient_name`, `patient_gender`, `patient_birth_date`, `patient_register_date`, `patient_status`, `patient_address`, `patient_email`, `patient_contact_no`, `transformers_id`) VALUES ('P_101','محمد على عبد السلام','ذكر','2000-01-18','2017-09-07','متزوج','ش مصر','ah01436@yahoo.com','01003008393',3),('P_105','glsdfgsdfg','انثى','2000-01-01','2017-08-13','متزوجة','gdfgsdfgsdfg','','3213123123',2),('P_106','نانسى عجرم','انثى','2000-01-25','2017-09-27','متزوجه','قنا ','ah011455@gmail.com','01048818570',3),('P_107','ASDASD','انثى','2000-01-01','2017-09-05','متزوجة','','','01003008393',1),('P_109','Ahmed Hamdy ','انثى','2000-01-01','2017-09-05','متزوجة','','','01003008393',1);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `personification`
+--
+
+DROP TABLE IF EXISTS `personification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `personification` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `personification`
+--
+
+LOCK TABLES `personification` WRITE;
+/*!40000 ALTER TABLE `personification` DISABLE KEYS */;
+INSERT  IGNORE INTO `personification` (`id`, `name`) VALUES (1,'تشخيص1'),(2,'تسخيص 2');
+/*!40000 ALTER TABLE `personification` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -530,7 +583,7 @@ CREATE TABLE `visits` (
   KEY `user_id` (`user_id`),
   KEY `pat_id` (`pat_id`),
   KEY `visite_type_code` (`visite_type_code`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -539,7 +592,7 @@ CREATE TABLE `visits` (
 
 LOCK TABLES `visits` WRITE;
 /*!40000 ALTER TABLE `visits` DISABLE KEYS */;
-INSERT  IGNORE INTO `visits` (`id`, `pat_id`, `doc_id`, `user_id`, `date_visit`, `visite_type_code`, `isopen`, `detection_done`) VALUES (4,'P_106','E_102','user_101','2017-09-06',2,0,0),(6,'P_107','E_102','user_101','2017-09-06',2,0,0);
+INSERT  IGNORE INTO `visits` (`id`, `pat_id`, `doc_id`, `user_id`, `date_visit`, `visite_type_code`, `isopen`, `detection_done`) VALUES (1,'P_101','E_102','user_101','2017-09-07',2,1,1),(2,'P_105','E_102','user_101','2017-09-07',1,1,1),(3,'P_106','E_102','user_101','2017-09-07',2,0,0),(4,'P_107','E_102','user_101','2017-09-07',1,0,0),(5,'P_109','E_102','user_101','2017-09-07',1,0,0);
 /*!40000 ALTER TABLE `visits` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -732,4 +785,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-06 19:29:35
+-- Dump completed on 2017-09-07 17:46:45

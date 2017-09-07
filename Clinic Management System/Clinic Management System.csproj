@@ -99,11 +99,23 @@
     <Compile Include="frm_expenses.Designer.cs">
       <DependentUpon>frm_expenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_exposure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_exposure.Designer.cs">
+      <DependentUpon>frm_exposure.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Open_Visit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Open_Visit.Designer.cs">
       <DependentUpon>frm_Open_Visit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_personification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_personification.Designer.cs">
+      <DependentUpon>frm_personification.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_priv_user.cs">
       <SubType>Form</SubType>
@@ -265,8 +277,14 @@
     <EmbeddedResource Include="frm_expenses.resx">
       <DependentUpon>frm_expenses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_exposure.resx">
+      <DependentUpon>frm_exposure.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Open_Visit.resx">
       <DependentUpon>frm_Open_Visit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_personification.resx">
+      <DependentUpon>frm_personification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_priv_user.resx">
       <DependentUpon>frm_priv_user.cs</DependentUpon>

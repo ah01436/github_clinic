@@ -51,6 +51,8 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.msCheckupManage = new System.Windows.Forms.ToolStripMenuItem();
             this.add_type_of_visit = new System.Windows.Forms.ToolStripMenuItem();
+            this.فتحزيارةلمريضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ادخالبياناتزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ادارةالاجهزةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ادارةالاجهزةToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ادارةالاشعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +78,7 @@
             this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrTime = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.فتحزيارةلمريضToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ادارةالتشخيصاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -246,7 +248,8 @@
             // 
             this.msCheckupManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.add_type_of_visit,
-            this.فتحزيارةلمريضToolStripMenuItem});
+            this.فتحزيارةلمريضToolStripMenuItem,
+            this.ادخالبياناتزيارةToolStripMenuItem});
             this.msCheckupManage.Name = "msCheckupManage";
             this.msCheckupManage.Size = new System.Drawing.Size(152, 24);
             this.msCheckupManage.Text = "إدارة الزيارات";
@@ -255,9 +258,23 @@
             // add_type_of_visit
             // 
             this.add_type_of_visit.Name = "add_type_of_visit";
-            this.add_type_of_visit.Size = new System.Drawing.Size(170, 24);
+            this.add_type_of_visit.Size = new System.Drawing.Size(171, 24);
             this.add_type_of_visit.Text = "إضافة نوع زيارة ";
             this.add_type_of_visit.Click += new System.EventHandler(this.add_type_of_visit_Click);
+            // 
+            // فتحزيارةلمريضToolStripMenuItem
+            // 
+            this.فتحزيارةلمريضToolStripMenuItem.Name = "فتحزيارةلمريضToolStripMenuItem";
+            this.فتحزيارةلمريضToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.فتحزيارةلمريضToolStripMenuItem.Text = "فتح زيارة لمريض";
+            this.فتحزيارةلمريضToolStripMenuItem.Click += new System.EventHandler(this.فتحزيارةلمريضToolStripMenuItem_Click);
+            // 
+            // ادخالبياناتزيارةToolStripMenuItem
+            // 
+            this.ادخالبياناتزيارةToolStripMenuItem.Name = "ادخالبياناتزيارةToolStripMenuItem";
+            this.ادخالبياناتزيارةToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.ادخالبياناتزيارةToolStripMenuItem.Text = "ادخال بيانات زيارة";
+            this.ادخالبياناتزيارةToolStripMenuItem.Click += new System.EventHandler(this.ادخالبياناتزيارةToolStripMenuItem_Click);
             // 
             // ادارةالاجهزةToolStripMenuItem
             // 
@@ -267,7 +284,8 @@
             this.ادارةالتحاليلToolStripMenuItem,
             this.بنودالمصروفاتToolStripMenuItem,
             this.المصروفاتToolStripMenuItem,
-            this.المخزنToolStripMenuItem});
+            this.المخزنToolStripMenuItem,
+            this.ادارةالتشخيصاتToolStripMenuItem});
             this.ادارةالاجهزةToolStripMenuItem.Name = "ادارةالاجهزةToolStripMenuItem";
             this.ادارةالاجهزةToolStripMenuItem.Size = new System.Drawing.Size(152, 24);
             this.ادارةالاجهزةToolStripMenuItem.Text = "الادارة العامة";
@@ -275,42 +293,42 @@
             // ادارةالاجهزةToolStripMenuItem1
             // 
             this.ادارةالاجهزةToolStripMenuItem1.Name = "ادارةالاجهزةToolStripMenuItem1";
-            this.ادارةالاجهزةToolStripMenuItem1.Size = new System.Drawing.Size(162, 24);
+            this.ادارةالاجهزةToolStripMenuItem1.Size = new System.Drawing.Size(167, 24);
             this.ادارةالاجهزةToolStripMenuItem1.Text = "ادارة الاجهزة";
             this.ادارةالاجهزةToolStripMenuItem1.Click += new System.EventHandler(this.ادارةالاجهزةToolStripMenuItem1_Click);
             // 
             // ادارةالاشعةToolStripMenuItem
             // 
             this.ادارةالاشعةToolStripMenuItem.Name = "ادارةالاشعةToolStripMenuItem";
-            this.ادارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.ادارةالاشعةToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.ادارةالاشعةToolStripMenuItem.Text = "ادارة الاشعة ";
             this.ادارةالاشعةToolStripMenuItem.Click += new System.EventHandler(this.ادارةالاشعةToolStripMenuItem_Click);
             // 
             // ادارةالتحاليلToolStripMenuItem
             // 
             this.ادارةالتحاليلToolStripMenuItem.Name = "ادارةالتحاليلToolStripMenuItem";
-            this.ادارةالتحاليلToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.ادارةالتحاليلToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.ادارةالتحاليلToolStripMenuItem.Text = "ادارة التحاليل ";
             this.ادارةالتحاليلToolStripMenuItem.Click += new System.EventHandler(this.ادارةالتحاليلToolStripMenuItem_Click);
             // 
             // بنودالمصروفاتToolStripMenuItem
             // 
             this.بنودالمصروفاتToolStripMenuItem.Name = "بنودالمصروفاتToolStripMenuItem";
-            this.بنودالمصروفاتToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.بنودالمصروفاتToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.بنودالمصروفاتToolStripMenuItem.Text = "بنود المصروفات";
             this.بنودالمصروفاتToolStripMenuItem.Click += new System.EventHandler(this.بنودالمصروفاتToolStripMenuItem_Click);
             // 
             // المصروفاتToolStripMenuItem
             // 
             this.المصروفاتToolStripMenuItem.Name = "المصروفاتToolStripMenuItem";
-            this.المصروفاتToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.المصروفاتToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.المصروفاتToolStripMenuItem.Text = "المصروفات";
             this.المصروفاتToolStripMenuItem.Click += new System.EventHandler(this.المصروفاتToolStripMenuItem_Click);
             // 
             // المخزنToolStripMenuItem
             // 
             this.المخزنToolStripMenuItem.Name = "المخزنToolStripMenuItem";
-            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(162, 24);
+            this.المخزنToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
             this.المخزنToolStripMenuItem.Text = "المخزن";
             this.المخزنToolStripMenuItem.Click += new System.EventHandler(this.المخزنToolStripMenuItem_Click);
             // 
@@ -456,12 +474,12 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
-            // فتحزيارةلمريضToolStripMenuItem
+            // ادارةالتشخيصاتToolStripMenuItem
             // 
-            this.فتحزيارةلمريضToolStripMenuItem.Name = "فتحزيارةلمريضToolStripMenuItem";
-            this.فتحزيارةلمريضToolStripMenuItem.Size = new System.Drawing.Size(170, 24);
-            this.فتحزيارةلمريضToolStripMenuItem.Text = "فتح زيارة لمريض";
-            this.فتحزيارةلمريضToolStripMenuItem.Click += new System.EventHandler(this.فتحزيارةلمريضToolStripMenuItem_Click);
+            this.ادارةالتشخيصاتToolStripMenuItem.Name = "ادارةالتشخيصاتToolStripMenuItem";
+            this.ادارةالتشخيصاتToolStripMenuItem.Size = new System.Drawing.Size(167, 24);
+            this.ادارةالتشخيصاتToolStripMenuItem.Text = "ادارة التشخيصات";
+            this.ادارةالتشخيصاتToolStripMenuItem.Click += new System.EventHandler(this.ادارةالتشخيصاتToolStripMenuItem_Click);
             // 
             // Main_Form
             // 
@@ -541,6 +559,8 @@
         private System.Windows.Forms.ToolStripMenuItem الصلاحياتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem مننحنToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem فتحزيارةلمريضToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ادخالبياناتزيارةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ادارةالتشخيصاتToolStripMenuItem;
         //private System.Windows.Forms.Button btnPatinet;
 
     }
