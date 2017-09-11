@@ -255,9 +255,41 @@ namespace Clinic_Management_System
                 con.CloseConnection();
                 return true;
             }
+
+            catch (MySqlException ex)
+            {
+                return false;
+
+            }
             catch (Exception ex)
             { MessageBox.Show(ex.Message);
             return false;
+
+            }
+        }
+        public int ExecuteQuery(string Query)
+        {
+            try
+            {
+                Connection con = new Connection();
+                con.OpenConnection();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con.connection;
+                cmd.CommandText = Query;
+                cmd.ExecuteNonQuery();
+                con.CloseConnection();
+                return 1;
+            }
+
+            catch (MySqlException ex)
+            {
+                return ex.Number;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
 
             }
         }

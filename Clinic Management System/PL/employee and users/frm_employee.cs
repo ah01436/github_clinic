@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Clinic_Management_System
@@ -34,6 +30,8 @@ namespace Clinic_Management_System
         {
             emp = new cls_employee();
             dt = new DataTable();
+            //================================================================
+            //لما اخلى الفورمة للبحث فقط 
             if (this.Name == "search") 
             {
                 Connection con = new Connection();
@@ -45,6 +43,8 @@ namespace Clinic_Management_System
                 dt = emp.selct_employee();
                 dv = new DataView(dt);
             }
+            //=================================================================
+
             if (dt.Rows.Count > 0)
             {
                 emp_id = dt.Rows[dt.Rows.Count - 1][0].ToString();
@@ -68,6 +68,7 @@ namespace Clinic_Management_System
                 dgv_employee.Columns[7].Visible = false;
                 dgv_employee.Columns[9].Visible = false;
                 dgv_employee.Columns[10].Visible = false;
+                dgv_employee.Columns[11].Visible = false;
             }
             catch (Exception ex)
             {
@@ -77,7 +78,7 @@ namespace Clinic_Management_System
         private void btn_add_Click(object sender, EventArgs e)
         {
             add_employee frm = new add_employee();
-            frm.Text = "اضافة مريض جديد";
+            frm.Text = "اضافة موظف جديد";
             frm.Name = "add_employee";
             frm.txt_id.Text = increasekey(emp_id);
             frm.ShowDialog();
@@ -97,11 +98,21 @@ namespace Clinic_Management_System
                     DialogResult dr = MessageBox.Show("هل تريد حذف الموظف المحدد", "تحذير", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        if (con.ExecuteQueries("DELETE FROM `clinic`.`staff` WHERE staff_id='"
-                            + dgv_employee.CurrentRow.Cells[0].Value.ToString()+"';"))
+                        if (con.ExecuteQuery("DELETE FROM `clinic`.`staff` WHERE staff_id='"
+                            + dgv_employee.CurrentRow.Cells[0].Value.ToString()+"';")==1)
                         {
                             frm_employee_Load(sender, e);
                             MessageBox.Show("تم الحذف بنجاح ");
+                        }
+                        else if(con.ExecuteQuery("DELETE FROM `clinic`.`staff` WHERE staff_id='"
+                            + dgv_employee.CurrentRow.Cells[0].Value.ToString()+"';")==1451)
+                        {
+                            MessageBox.Show("عفوا لا يمكن حذف هذا الموظف لانه مرتبط بعمليات اخرى داخل النظام  ","تنبيه",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show(con.ExecuteQuery(@"DELETE FROM `clinic`.`staff` WHERE staff_id='"
+                            + dgv_employee.CurrentRow.Cells[0].Value.ToString() + "';").ToString());
                         }
                     }
                 }
@@ -262,6 +273,72 @@ namespace Clinic_Management_System
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message); }
+        }
+
+        private void frm_employee_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.F1)
+            {
+                btn_add_Click(sender, e);
+            }
+           else if (e.KeyCode == Keys.F2)
+            {
+                btn_edit_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.F3 || e.KeyCode == Keys.Delete)
+            {
+                btn_delete_Click(sender, e);
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+            //else 
+            //{
+            //    System.Media.SystemSounds.Beep.Play();
+            //}
+        }
+        private void txt_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(rdb_phone.Checked)
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (rdb_name.Checked)
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (rdb_id.Checked) 
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != 'E' && e.KeyChar != '_')
+                {
+                    e.Handled = true;
+                }
+                if ((e.KeyChar == '_') && ((sender as TextBox).Text.IndexOf('_') > -1))
+                {
+                    e.Handled = true;
+                }
+                if ((e.KeyChar == 'E') && ((sender as TextBox).Text.IndexOf('E') > -1))
+                {
+                    e.Handled = true;
+                }
+            }
+
+        }
+
+        private void txt_search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.V)
+            {
+                // cancel the "paste" function
+                e.SuppressKeyPress = true;
+            }
         }
 
     }

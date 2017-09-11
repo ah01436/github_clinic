@@ -165,3 +165,6 @@ E:\github_clinic\Clinic Management System\bin\Debug\Clinic Management System.pdb
 E:\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Open_Visit.resources
 E:\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_exposure.resources
 E:\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_personification.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_exposure.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_Open_Visit.resources
+G:\Projects\clinic\github_clinic\Clinic Management System\obj\Debug\Clinic_Management_System.frm_personification.resources

@@ -183,10 +183,10 @@
     <Compile Include="PL\frmServerSetting.designer.cs">
       <DependentUpon>frmServerSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_add_employee.cs">
+    <Compile Include="PL\employee and users\frm_add_employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_add_employee.Designer.cs">
+    <Compile Include="PL\employee and users\frm_add_employee.Designer.cs">
       <DependentUpon>frm_add_employee.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_add_user.cs">
@@ -219,22 +219,22 @@
     <Compile Include="PL\frm_Visit_type.designer.cs">
       <DependentUpon>frm_Visit_type.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_add_patient.cs">
+    <Compile Include="PL\patient\frm_add_patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_add_patient.Designer.cs">
+    <Compile Include="PL\patient\frm_add_patient.Designer.cs">
       <DependentUpon>frm_add_patient.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_employee.cs">
+    <Compile Include="PL\employee and users\frm_employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_employee.Designer.cs">
+    <Compile Include="PL\employee and users\frm_employee.Designer.cs">
       <DependentUpon>frm_employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\frm_patient.cs">
+    <Compile Include="PL\patient\frm_patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\frm_patient.Designer.cs">
+    <Compile Include="PL\patient\frm_patient.Designer.cs">
       <DependentUpon>frm_patient.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\frm_inventoery.cs">
@@ -324,7 +324,7 @@
     <EmbeddedResource Include="PL\frmServerSetting.resx">
       <DependentUpon>frmServerSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frm_add_employee.resx">
+    <EmbeddedResource Include="PL\employee and users\frm_add_employee.resx">
       <DependentUpon>frm_add_employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_add_user.resx">
@@ -342,13 +342,13 @@
     <EmbeddedResource Include="PL\frm_Visit_type.resx">
       <DependentUpon>frm_Visit_type.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frm_add_patient.resx">
+    <EmbeddedResource Include="PL\patient\frm_add_patient.resx">
       <DependentUpon>frm_add_patient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frm_employee.resx">
+    <EmbeddedResource Include="PL\employee and users\frm_employee.resx">
       <DependentUpon>frm_employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\frm_patient.resx">
+    <EmbeddedResource Include="PL\patient\frm_patient.resx">
       <DependentUpon>frm_patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Form.resx">
@@ -474,9 +474,7 @@
   <ItemGroup>
     <None Include="Resources\edit_profile .png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PL\patient_\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

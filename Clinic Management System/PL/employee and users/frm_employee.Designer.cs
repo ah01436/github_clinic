@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_employee));
             this.gb_patient_search = new System.Windows.Forms.GroupBox();
             this.rdb_phone = new System.Windows.Forms.RadioButton();
             this.rdb_name = new System.Windows.Forms.RadioButton();
@@ -121,6 +122,8 @@
             this.toolTip1.SetToolTip(this.txt_search, "ادخل نص البحث");
             this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             this.txt_search.Enter += new System.EventHandler(this.txt_search_Enter);
+            this.txt_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyDown);
+            this.txt_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_search_KeyPress);
             this.txt_search.Leave += new System.EventHandler(this.txt_search_Leave);
             // 
             // label1
@@ -149,7 +152,7 @@
             this.toolStrip_controrl.Name = "toolStrip_controrl";
             this.toolStrip_controrl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.toolStrip_controrl.Size = new System.Drawing.Size(919, 90);
-            this.toolStrip_controrl.TabIndex = 24;
+            this.toolStrip_controrl.TabIndex = 0;
             this.toolStrip_controrl.Text = "toolStrip1";
             // 
             // btn_add
@@ -276,14 +279,15 @@
             this.Controls.Add(this.toolStrip_controrl);
             this.Controls.Add(this.dgv_employee);
             this.Font = new System.Drawing.Font("Tahoma", 14F);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frm_employee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "شاشة الموظفين";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_employee_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frm_employee_KeyUp);
             this.gb_patient_search.ResumeLayout(false);
             this.gb_patient_search.PerformLayout();
             this.toolStrip_controrl.ResumeLayout(false);

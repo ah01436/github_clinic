@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Clinic_information));
             this.txt_clinic_name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,13 +48,13 @@
             this.txt_clinic_face = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_edit = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.txt_doctorname = new System.Windows.Forms.TextBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.btn_cancl = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txt_doctorname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txt_clinic_name
@@ -66,6 +67,8 @@
             this.txt_clinic_name.TabIndex = 0;
             this.txt_clinic_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txt_clinic_name, "ادخل اسم العيادة");
+            this.txt_clinic_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_clinic_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
             // 
             // label1
             // 
@@ -149,6 +152,8 @@
             this.txt_clinic_address.TabIndex = 9;
             this.txt_clinic_address.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txt_clinic_address, "ادخل عنوان العيادة");
+            this.txt_clinic_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_clinic_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
             // 
             // txt_clinic_phone
             // 
@@ -193,6 +198,8 @@
             this.txt_clinic_website.TabIndex = 13;
             this.txt_clinic_website.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txt_clinic_website, "ادخل رابط المقع الاكترونى الخاص بالعيادة ان وجد ");
+            this.txt_clinic_website.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_clinic_website.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
             // 
             // txt_clinic_email
             // 
@@ -204,6 +211,8 @@
             this.txt_clinic_email.TabIndex = 14;
             this.txt_clinic_email.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txt_clinic_email, "ادخل البريد الالكترونى الخاص بالعيادة ان وجد ");
+            this.txt_clinic_email.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_clinic_email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
             // 
             // txt_clinic_face
             // 
@@ -215,6 +224,8 @@
             this.txt_clinic_face.TabIndex = 15;
             this.txt_clinic_face.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.toolTip1.SetToolTip(this.txt_clinic_face, "ادخل رابط صفحة العيادة على الفيس بوك ");
+            this.txt_clinic_face.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_clinic_face.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
             // 
             // toolTip1
             // 
@@ -237,19 +248,6 @@
             this.btn_edit.UseVisualStyleBackColor = true;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
-            // btn_clear
-            // 
-            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_clear.Enabled = false;
-            this.btn_clear.Image = global::Clinic_Management_System.Properties.Resources.edit_clear;
-            this.btn_clear.Location = new System.Drawing.Point(119, 486);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(107, 44);
-            this.btn_clear.TabIndex = 18;
-            this.toolTip2.SetToolTip(this.btn_clear, "تفريغ الخانات ");
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
             // btn_save
             // 
             this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -262,6 +260,32 @@
             this.toolTip1.SetToolTip(this.btn_save, "حفظ");
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // txt_doctorname
+            // 
+            this.txt_doctorname.Enabled = false;
+            this.txt_doctorname.Location = new System.Drawing.Point(15, 96);
+            this.txt_doctorname.Name = "txt_doctorname";
+            this.txt_doctorname.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txt_doctorname.Size = new System.Drawing.Size(260, 30);
+            this.txt_doctorname.TabIndex = 21;
+            this.txt_doctorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.toolTip1.SetToolTip(this.txt_doctorname, "ادخل اسم المشرف على العيادة او المركز ");
+            this.txt_doctorname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_clinic_name_KeyDown);
+            this.txt_doctorname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_clinic_name_KeyPress);
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clear.Enabled = false;
+            this.btn_clear.Image = global::Clinic_Management_System.Properties.Resources.edit_clear;
+            this.btn_clear.Location = new System.Drawing.Point(119, 486);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(107, 44);
+            this.btn_clear.TabIndex = 18;
+            this.toolTip2.SetToolTip(this.btn_clear, "تفريغ الخانات ");
+            this.btn_clear.UseVisualStyleBackColor = true;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // toolTip2
             // 
@@ -303,17 +327,6 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "اسم الدكتور المشرف";
             // 
-            // txt_doctorname
-            // 
-            this.txt_doctorname.Enabled = false;
-            this.txt_doctorname.Location = new System.Drawing.Point(15, 96);
-            this.txt_doctorname.Name = "txt_doctorname";
-            this.txt_doctorname.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txt_doctorname.Size = new System.Drawing.Size(260, 30);
-            this.txt_doctorname.TabIndex = 21;
-            this.txt_doctorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.toolTip1.SetToolTip(this.txt_doctorname, "ادخل اسم المشرف على العيادة او المركز ");
-            // 
             // frm_Clinic_information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -344,6 +357,7 @@
             this.Controls.Add(this.txt_clinic_name);
             this.Font = new System.Drawing.Font("Tahoma", 14F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
